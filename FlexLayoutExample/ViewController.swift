@@ -6,14 +6,49 @@
 //
 
 import UIKit
+import Combine
 
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController {
+    private let myFlexView = MyFlexView()
+    private let viewModel = ViewModel()
+    private var cancellable: Set<AnyCancellable> = []
+    
+    var count: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setPlusButton()
+        setMinusButton()
+        setBinding()
     }
-
-
+    
+    override func loadView() {
+        view = myFlexView
+        
+        myFlexView.count.text = "\(count)"
+    }
+    
+    private func setBinding () {
+        viewModel.$count.sink { [weak self] count in
+            self?.myFlexView.count.text = "\(count)"
+        }.store(in: &cancellable)
+    }
+    
+    private func setPlusButton() {
+        myFlexView.plusButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.viewModel.addCount(value: 1)
+        }), for: .touchUpInside)
+    }
+    
+    private func setMinusButton() {
+        myFlexView.minusButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.viewModel.addCount(value: -1)
+        }), for: .touchUpInside)
+    }
 }
 
+
+#Preview {
+    return ViewController()
+}

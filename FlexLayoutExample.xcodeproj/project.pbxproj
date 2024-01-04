@@ -16,6 +16,10 @@
 		B72043F82B46DFF500575A30 /* FlexLayoutExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72043F72B46DFF500575A30 /* FlexLayoutExampleTests.swift */; };
 		B72044022B46DFF500575A30 /* FlexLayoutExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72044012B46DFF500575A30 /* FlexLayoutExampleUITests.swift */; };
 		B72044042B46DFF500575A30 /* FlexLayoutExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72044032B46DFF500575A30 /* FlexLayoutExampleUITestsLaunchTests.swift */; };
+		B72044112B46E08400575A30 /* MyFlexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72044102B46E08400575A30 /* MyFlexView.swift */; };
+		B72044142B46E1F600575A30 /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = B72044132B46E1F600575A30 /* FlexLayout */; };
+		B72044172B46E5A400575A30 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = B72044162B46E5A400575A30 /* PinLayout */; };
+		B72044192B46E6BF00575A30 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72044182B46E6BF00575A30 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		B72043FD2B46DFF500575A30 /* FlexLayoutExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexLayoutExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B72044012B46DFF500575A30 /* FlexLayoutExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexLayoutExampleUITests.swift; sourceTree = "<group>"; };
 		B72044032B46DFF500575A30 /* FlexLayoutExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexLayoutExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B72044102B46E08400575A30 /* MyFlexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlexView.swift; sourceTree = "<group>"; };
+		B72044182B46E6BF00575A30 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72044172B46E5A400575A30 /* PinLayout in Frameworks */,
+				B72044142B46E1F600575A30 /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +110,8 @@
 				B72043E02B46DFF400575A30 /* AppDelegate.swift */,
 				B72043E22B46DFF400575A30 /* SceneDelegate.swift */,
 				B72043E42B46DFF400575A30 /* ViewController.swift */,
+				B72044102B46E08400575A30 /* MyFlexView.swift */,
+				B72044182B46E6BF00575A30 /* ViewModel.swift */,
 				B72043E62B46DFF400575A30 /* Main.storyboard */,
 				B72043E92B46DFF500575A30 /* Assets.xcassets */,
 				B72043EB2B46DFF500575A30 /* LaunchScreen.storyboard */,
@@ -143,6 +153,10 @@
 			dependencies = (
 			);
 			name = FlexLayoutExample;
+			packageProductDependencies = (
+				B72044132B46E1F600575A30 /* FlexLayout */,
+				B72044162B46E5A400575A30 /* PinLayout */,
+			);
 			productName = FlexLayoutExample;
 			productReference = B72043DD2B46DFF400575A30 /* FlexLayoutExample.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +229,10 @@
 				Base,
 			);
 			mainGroup = B72043D42B46DFF400575A30;
+			packageReferences = (
+				B72044122B46E1F600575A30 /* XCRemoteSwiftPackageReference "FlexLayout" */,
+				B72044152B46E5A400575A30 /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = B72043DE2B46DFF400575A30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B72044192B46E6BF00575A30 /* ViewModel.swift in Sources */,
 				B72043E52B46DFF400575A30 /* ViewController.swift in Sources */,
 				B72043E12B46DFF400575A30 /* AppDelegate.swift in Sources */,
 				B72043E32B46DFF400575A30 /* SceneDelegate.swift in Sources */,
+				B72044112B46E08400575A30 /* MyFlexView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X843D4L2C2;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlexLayoutExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,6 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X843D4L2C2;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlexLayoutExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -607,6 +629,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B72044122B46E1F600575A30 /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+		B72044152B46E5A400575A30 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B72044132B46E1F600575A30 /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B72044122B46E1F600575A30 /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+		B72044162B46E5A400575A30 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B72044152B46E5A400575A30 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B72043D52B46DFF400575A30 /* Project object */;
 }
