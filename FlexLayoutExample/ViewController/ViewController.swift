@@ -10,6 +10,7 @@ import Combine
 
 final class ViewController: UIViewController {
     private let myFlexView = MyFlexView()
+    private let layoutExample1 = LayoutExample1()
     private let viewModel = ViewModel()
     private var cancellable: Set<AnyCancellable> = []
     
@@ -24,7 +25,8 @@ final class ViewController: UIViewController {
     }
     
     override func loadView() {
-        view = myFlexView
+        // view = myFlexView
+        view = layoutExample1
         
         myFlexView.count.text = "\(count)"
     }
